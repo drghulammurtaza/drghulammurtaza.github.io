@@ -58,19 +58,59 @@
   }
   .hero-content { position:relative; z-index:2; max-width:800px; }
   .hero h1 { font-size:3.2rem; color:#fff; margin-bottom:0.5rem; letter-spacing: -0.02em; }
-  .hero .subtitle { font-size:1.3rem; color:#bee3f8; margin-bottom:1.5rem; font-weight:300; }
+  .hero .subtitle { font-size:1.3rem; color:#bee3f8; margin-bottom:1rem; font-weight:300; }
+  .hero-socials {
+    display:flex;
+    justify-content:center;
+    gap:0.85rem;
+    margin-bottom:1.5rem;
+  }
+  .social-btn {
+    display:inline-flex;
+    align-items:center;
+    gap:0.45rem;
+    padding:0.45rem 0.95rem;
+    border-radius:999px;
+    background:rgba(255,255,255,0.1);
+    border:1px solid rgba(255,255,255,0.28);
+    color:#fff;
+    font-size:0.85rem;
+    font-weight:500;
+    transition:all 0.22s ease;
+  }
+  .social-btn:hover {
+    background:rgba(255,255,255,0.2);
+    border-color:#fff;
+    color:#fff;
+    text-decoration:none;
+    transform:translateY(-2px);
+  }
+  .social-btn svg {
+    width:15px;
+    height:15px;
+    fill:currentColor;
+    flex-shrink:0;
+  }
   .hero .tagline { font-size:1.1rem; color:#e2e8f0; max-width:650px; margin:0 auto 2rem; }
+  .hero-actions {
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:1rem;
+  }
   .btn {
     display:inline-block; padding:0.85rem 2rem; border-radius:6px;
     font-weight:600; font-size:0.95rem; transition:all 0.25s ease;
   }
-  .btn-primary { background:var(--teal); color:#fff; margin-right:1rem; box-shadow: 0 4px 14px rgba(49,151,149,0.35); }
+  .btn-primary { background:var(--teal); color:#fff; box-shadow: 0 4px 14px rgba(49,151,149,0.35); }
   .btn-primary:hover { background:#2c7a7b; text-decoration:none; transform: translateY(-2px); }
   .btn-outline { border:2px solid rgba(255,255,255,0.5); color:#fff; }
   .btn-outline:hover { background:rgba(255,255,255,0.12); border-color:#fff; text-decoration:none; transform: translateY(-2px); }
 
   /* SECTIONS */
   section { padding:5rem 2rem; max-width:1100px; margin:0 auto; }
+  .section-band { background:var(--light); max-width:100%; }
+  .section-inner { max-width:1100px; margin:0 auto; }
   .section-title { font-size:2rem; margin-bottom:0.5rem; }
   .section-subtitle { color:var(--muted); margin-bottom:2.5rem; font-size:1rem; }
 
@@ -186,8 +226,8 @@
 
   /* CONTACT */
   .contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; }
-  .contact-info p { margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem; }
-  .contact-info .label { font-weight:600; color:var(--navy); min-width:80px; }
+  .contact-info p { margin-bottom:0.9rem; display:flex; align-items:center; gap:0.5rem; }
+  .contact-info .label { font-weight:600; color:var(--navy); min-width:105px; }
   .contact-form input, .contact-form textarea {
     width:100%; padding:0.8rem; border:1px solid var(--border); border-radius:6px;
     font-family:'Inter',sans-serif; font-size:0.95rem; margin-bottom:1rem;
@@ -217,9 +257,9 @@
   <div class="logo">Dr. G. Murtaza</div>
   <ul>
     <li><a href="#about">About</a></li>
-    <li><a href="#research">Research</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -230,9 +270,25 @@
   <div class="hero-content">
     <h1>Dr. Ghulam Murtaza</h1>
     <div class="subtitle">Quantum Technologies Researcher | Licensed Electrical Engineer</div>
+    <div class="hero-socials">
+      <a href="https://x.com/GMurtaZaPak" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X (Twitter)">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+        <span>X / Twitter</span>
+      </a>
+      <a href="https://www.linkedin.com/in/gmurtazapak" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+        </svg>
+        <span>LinkedIn</span>
+      </a>
+    </div>
     <p class="tagline">Advancing secure quantum communication through experimental quantum optics, quantum photonics, and single‑photon source technologies.</p>
-    <a href="#research" class="btn btn-primary">View My Research</a>
-    <a href="Ghulam_Murtaza_CV.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+    <div class="hero-actions">
+      <a href="#research" class="btn btn-primary">View My Research</a>
+      <a href="Ghulam_Murtaza_CV.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+    </div>
   </div>
 </div>
 
@@ -263,9 +319,83 @@
   <p>My research journey has taken me across four countries—Pakistan, China, Italy, and Ireland—where I have developed expertise in experimental quantum optics, quantum key distribution (QKD), single‑photon sources, quantum satellite communications, and optical communication systems. I am passionate about advancing secure quantum technologies and contributing to teaching, research supervision, and curriculum development.</p>
 </section>
 
-<!-- RESEARCH -->
-<section id="research" style="background:var(--light); max-width:100%;">
-  <div style="max-width:1100px; margin:0 auto;">
+<!-- EXPERIENCE -->
+<section id="experience" class="section-band">
+  <div class="section-inner">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Academic and professional appointments.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>Government of Ireland Postdoctoral Researcher</h3>
+        <div class="meta">Tyndall National Institute, University College Cork · Sep 2026 – Present</div>
+        <div class="location">Cork, Ireland</div>
+        <p>Working on the project “Cavity‑Integrated Molecular Photon Interface for Scalable Photonic Graph State Generation” under the Government of Ireland Postdoctoral Fellowships (Research Ireland Funding).</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Postdoctoral Researcher</h3>
+        <div class="meta">Walton Institute, SETU & CONNECT Center · May 2023 – May 2025</div>
+        <div class="location">Waterford, Ireland</div>
+        <p>Developed Quantum Optics Lab under the IrelandQCI initiative, procuring cutting‑edge equipment and implementing new QKD protocols. Conducted research on quantum communication via satellites. Mentored students and managed Health & Safety and Lab Procurement responsibilities.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Global Manager</h3>
+        <div class="meta">World Student Services · Jan 2020 – Present</div>
+        <div class="location">Pakistan</div>
+        <p>Responsibilities: Global Admissions Analysis and Pathways Consultancy, Admission Consultancy and Advisory, Application, International Partnerships, Coordination and Documentation Process Management.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>RF Drive Test Engineer (Telecom)</h3>
+        <div class="meta">Turnotech · Jan 2017 – Aug 2017</div>
+        <div class="location">Pakistan</div>
+        <p>Complete expertise in 2G, 3G, and 4G Drive Testing, Post Processing, fault identification, sector swaps, and identifying missing neighbors. Documented reports and resolved customer complaints.</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Internee DT Engineer (Telecom)</h3>
+        <div class="meta">Jinsung International · Feb 2016 – Sep 2016</div>
+        <div class="location">Pakistan</div>
+        <p>Performed 2G, 3G, and 4G Drive Testing and SSV Drive Testing. Conducted Post Processing, fault identification, sector swaps, and customer complaint resolution.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <p class="section-subtitle">Degrees, scholarships, and certifications.</p>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>PhD in Quantum Technologies</h3>
+      <div class="meta">University of Naples, Federico II & National Institute of Optics (CNR‑INO) · Feb 2020 – Apr 2023</div>
+      <div class="location">Florence, Italy</div>
+      <p>Supervisor: Dr. Costanza Toninelli · Research Group: Quantum Nanophotonics, LENS · Thesis: <em>Molecular Quantum Emitter for Quantum Communication</em> · Full PhD scholarship.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Master of Engineering in Electronics and Communications Engineering</h3>
+      <div class="meta">Beijing University of Posts and Telecommunications · Sep 2017 – 2019</div>
+      <div class="location">Beijing, China</div>
+      <p>Supervisor: Prof. Xin Xiangjun · Research Lab: State Key Laboratory of Information Photonics and Optical Communications · Thesis: <em>Spectral Efficient Optical Communication Using Higher Order QAM</em> · Chinese Government Scholarship.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>B.Sc. Electrical Engineering (Telecommunications)</h3>
+      <div class="meta">Government College University · Sep 2011 – 2015</div>
+      <div class="location">Faisalabad, Pakistan</div>
+      <p>Thesis/FYP: <em>Intelligent Monitoring and Controlling of Home and Industrial Appliances Through Web</em> · Merit Scholarship.</p>
+    </div>
+  </div>
+  <h3 style="margin-top:2.5rem;">Honors & Awards</h3>
+  <ul class="pub-list">
+    <li>Research Ireland Postdoctoral Fellowship — Tyndall National Institute, University College Cork</li>
+    <li>Full PhD Scholarship — University of Naples, Federico II, Italy</li>
+    <li>PhD Scholarship — Shanghai Jiao Tong University, China</li>
+    <li>Chinese Government Scholarship for Master’s — Beijing University of Posts and Telecommunications</li>
+    <li>Merit Scholarship for College Studies — Punjab College of Science, Lahore, Pakistan</li>
+  </ul>
+</section>
+
+<!-- RESEARCH & REMAINING SECTIONS -->
+<section id="research" class="section-band">
+  <div class="section-inner">
     <h2 class="section-title">Research & Publications</h2>
     <p class="section-subtitle">Selected projects, publications, and presentations.</p>
 
@@ -320,80 +450,6 @@
       <li><span class="event-year">2022</span> Quantum Technologies PhD Summer School, Scuola Superiore di Catania, Italy — <em>Oral Contribution</em></li>
       <li><span class="event-year">2021</span> Quantum Technologies PhD Summer School, Università di Camerino, Italy — <em>Oral Contribution</em></li>
       <li><span class="event-year">2020</span> Quantum Technologies PhD Summer School, National Institute of Optics, Florence, Italy — <em>Oral Contribution</em></li>
-    </ul>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <h2 class="section-title">Experience</h2>
-  <p class="section-subtitle">Academic and professional appointments.</p>
-  <div class="timeline">
-    <div class="timeline-item">
-      <h3>Government of Ireland Postdoctoral Researcher</h3>
-      <div class="meta">Tyndall National Institute, University College Cork · Sep 2026 – Present</div>
-      <div class="location">Cork, Ireland</div>
-      <p>Working on the project “Cavity‑Integrated Molecular Photon Interface for Scalable Photonic Graph State Generation” under the Government of Ireland Postdoctoral Fellowships (Research Ireland Funding).</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Postdoctoral Researcher</h3>
-      <div class="meta">Walton Institute, SETU & CONNECT Center · May 2023 – May 2025</div>
-      <div class="location">Waterford, Ireland</div>
-      <p>Developed Quantum Optics Lab under the IrelandQCI initiative, procuring cutting‑edge equipment and implementing new QKD protocols. Conducted research on quantum communication via satellites. Mentored students and managed Health & Safety and Lab Procurement responsibilities.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Global Manager</h3>
-      <div class="meta">World Student Services · Jan 2020 – Present</div>
-      <div class="location">Pakistan</div>
-      <p>Responsibilities: Global Admissions Analysis and Pathways Consultancy, Admission Consultancy and Advisory, Application, International Partnerships, Coordination and Documentation Process Management.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>RF Drive Test Engineer (Telecom)</h3>
-      <div class="meta">Turnotech · Jan 2017 – Aug 2017</div>
-      <div class="location">Pakistan</div>
-      <p>Complete expertise in 2G, 3G, and 4G Drive Testing, Post Processing, fault identification, sector swaps, and identifying missing neighbors. Documented reports and resolved customer complaints.</p>
-    </div>
-    <div class="timeline-item">
-      <h3>Internee DT Engineer (Telecom)</h3>
-      <div class="meta">Jinsung International · Feb 2016 – Sep 2016</div>
-      <div class="location">Pakistan</div>
-      <p>Performed 2G, 3G, and 4G Drive Testing and SSV Drive Testing. Conducted Post Processing, fault identification, sector swaps, and customer complaint resolution.</p>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" style="background:var(--light); max-width:100%;">
-  <div style="max-width:1100px; margin:0 auto;">
-    <h2 class="section-title">Education</h2>
-    <p class="section-subtitle">Degrees, scholarships, and certifications.</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>PhD in Quantum Technologies</h3>
-        <div class="meta">University of Naples, Federico II & National Institute of Optics (CNR‑INO) · Feb 2020 – Apr 2023</div>
-        <div class="location">Florence, Italy</div>
-        <p>Supervisor: Dr. Costanza Toninelli · Research Group: Quantum Nanophotonics, LENS · Thesis: <em>Molecular Quantum Emitter for Quantum Communication</em> · Full PhD scholarship.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>Master of Engineering in Electronics and Communications Engineering</h3>
-        <div class="meta">Beijing University of Posts and Telecommunications · Sep 2017 – 2019</div>
-        <div class="location">Beijing, China</div>
-        <p>Supervisor: Prof. Xin Xiangjun · Research Lab: State Key Laboratory of Information Photonics and Optical Communications · Thesis: <em>Spectral Efficient Optical Communication Using Higher Order QAM</em> · Chinese Government Scholarship.</p>
-      </div>
-      <div class="timeline-item">
-        <h3>B.Sc. Electrical Engineering (Telecommunications)</h3>
-        <div class="meta">Government College University · Sep 2011 – 2015</div>
-        <div class="location">Faisalabad, Pakistan</div>
-        <p>Thesis/FYP: <em>Intelligent Monitoring and Controlling of Home and Industrial Appliances Through Web</em> · Merit Scholarship.</p>
-      </div>
-    </div>
-    <h3 style="margin-top:2.5rem;">Honors & Awards</h3>
-    <ul class="pub-list">
-      <li>Research Ireland Postdoctoral Fellowship — Tyndall National Institute, University College Cork</li>
-      <li>Full PhD Scholarship — University of Naples, Federico II, Italy</li>
-      <li>PhD Scholarship — Shanghai Jiao Tong University, China</li>
-      <li>Chinese Government Scholarship for Master’s — Beijing University of Posts and Telecommunications</li>
-      <li>Merit Scholarship for College Studies — Punjab College of Science, Lahore, Pakistan</li>
     </ul>
   </div>
 </section>
@@ -459,8 +515,8 @@
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="background:var(--light); max-width:100%;">
-  <div style="max-width:1100px; margin:0 auto;">
+<section id="contact" class="section-band">
+  <div class="section-inner">
     <h2 class="section-title">Contact</h2>
     <p class="section-subtitle">Get in touch for collaborations, talks, or opportunities.</p>
     <div class="contact-grid">
@@ -469,9 +525,11 @@
         <p><span class="label">Alt Email:</span> <a href="mailto:engrgm96@gmail.com">engrgm96@gmail.com</a></p>
         <p><span class="label">Phone:</span> +353 899559000</p>
         <p><span class="label">Location:</span> Ireland</p>
-        <p><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/gmurtazapak" target="_blank">gmurtazapak</a></p>
-        <p><span class="label">Scholar:</span> <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
-        <p><span class="label">Website:</span> <a href="https://drghulammurtaza.github.io/" target="_blank">drghulammurtaza.github.io</a></p>
+        <p><span class="label">LinkedIn:</span> <a href="https://www.linkedin.com/in/gmurtazapak" target="_blank" rel="noopener noreferrer">gmurtazapak</a></p>
+        <p><span class="label">X / Twitter:</span> <a href="https://x.com/GMurtaZaPak" target="_blank" rel="noopener noreferrer">@GMurtaZaPak</a></p>
+        <p><span class="label">ResearchGate:</span> <a href="https://www.researchgate.net/profile/Ghulam-Murtaza-65" target="_blank" rel="noopener noreferrer">Ghulam-Murtaza-65</a></p>
+        <p><span class="label">Scholar:</span> <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a></p>
+        <p><span class="label">Website:</span> <a href="https://drghulammurtaza.github.io/" target="_blank" rel="noopener noreferrer">drghulammurtaza.github.io</a></p>
       </div>
       <div class="contact-form">
         <input type="text" placeholder="Your Name">
