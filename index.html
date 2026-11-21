@@ -127,12 +127,33 @@
   .project-card .meta { color:var(--teal); font-size:0.85rem; font-weight:600; margin-bottom:1rem; }
   .project-card p { color:var(--gray); font-size:0.95rem; }
 
-  /* PUBLICATIONS */
+  /* PUBLICATIONS & EVENTS */
   .pub-list { list-style:none; }
-  .pub-list li { padding:1rem 0; border-bottom:1px solid var(--border); font-size:0.95rem; }
+  .pub-list li { padding:0.95rem 0; border-bottom:1px solid var(--border); font-size:0.95rem; }
   .pub-list li:last-child { border-bottom:none; }
+  .pub-badge {
+    display:inline-block;
+    background:rgba(49,151,149,0.12);
+    color:var(--navy);
+    border:1px solid rgba(49,151,149,0.35);
+    font-size:0.78rem;
+    font-weight:700;
+    padding:0.1rem 0.45rem;
+    border-radius:4px;
+    margin-right:0.45rem;
+  }
   .pub-list .pub-title { font-weight:600; }
   .pub-list .pub-journal { color:var(--muted); font-style:italic; }
+
+  .events-list { list-style:none; }
+  .events-list li {
+    padding:0.45rem 0;
+    border-bottom:1px solid rgba(226,232,240,0.65);
+    font-size:0.92rem;
+    line-height:1.45;
+  }
+  .events-list li:last-child { border-bottom:none; }
+  .event-year { font-weight:700; color:var(--teal); margin-right:0.4rem; }
 
   /* TIMELINE */
   .timeline { position:relative; padding-left:2rem; }
@@ -268,24 +289,37 @@
       <p>Demonstrated a proof‑of‑concept QKD system using a molecule‑based single‑photon source operating at room temperature (785 nm). Achieved concrete advantages in secret key rate (SKR) and security due to negligible multi‑photon events.</p>
     </div>
 
-    <h3 style="margin:2.5rem 0 1rem;">Selected Journal Publications</h3>
+    <h3 style="margin:2.5rem 0 1rem;">Selected Journal & Conference Publications</h3>
     <ul class="pub-list">
-      <li><span class="pub-title">Efficient room‑temperature molecular single‑photon sources for quantum key distribution.</span> <span class="pub-journal">Optics Express, 31(6), 9437‑9447 (2023).</span> — G. Murtaza et al.</li>
-      <li><span class="pub-title">Triggered emission of indistinguishable photons from an organic dye molecule.</span> <span class="pub-journal">Applied Physics Letters, 118, 204002 (2021).</span> — P. Lombardi, M. Colautti, R. Duquennoy, G. Murtaza et al.</li>
-      <li><span class="pub-title">Optical Frequency Comb‑Based 256‑QAM WDM Coherent System with Digital Signal Processing Algorithm.</span> <span class="pub-journal">Chips, 4(2), 16 (2025).</span> — A. Babar, G. Murtaza et al.</li>
-      <li><span class="pub-title">A Lightweight Multi‑Scale STFT with SE Attention and BiLSTM for Real‑Time Bearing Fault Diagnosis.</span> <span class="pub-journal">Advances in Mechanical Engineering (2025, accepted).</span> — M. Tahir, H. Li, W. Khan, Q. Kharma, G. Murtaza et al.</li>
+      <li><span class="pub-badge">J1</span> <span class="pub-title">Efficient room‑temperature molecular single‑photon sources for quantum key distribution.</span> <span class="pub-journal">Optics Express, 31(6), 9437‑9447 (2023).</span> — G. Murtaza, M. Colautti, M. Hilke, P. Lombardi, F. Cataliotti, A. Zavatta, D. Bacco, and C. Toninelli.</li>
+      <li><span class="pub-badge">J2</span> <span class="pub-title">Triggered emission of indistinguishable photons from an organic dye molecule.</span> <span class="pub-journal">Applied Physics Letters, 118, 204002 (2021).</span> — P. Lombardi, M. Colautti, R. Duquennoy, G. Murtaza, P. Majumder, and C. Toninelli.</li>
+      <li><span class="pub-badge">J3</span> <span class="pub-title">Optical Frequency Comb‑Based 256‑QAM WDM Coherent System with Digital Signal Processing Algorithm.</span> <span class="pub-journal">Chips, 4(2), 16 (2025).</span> — A. Babar, G. Murtaza, H. M. Bilal, T. Mahmood, M. Rashid, and Z. Ullah.</li>
+      <li><span class="pub-badge">J4</span> <span class="pub-title">Energy routing algorithm based on OSPF protocol and virtual circuit switching mode in energy local area network.</span> <span class="pub-journal">International Journal of Computational Complexity and Intelligent Algorithms, pp. 292‑310 (2020).</span> — B. Ali, G. Murtaza, T. Mahmood, H. M. Bilal, R. Zahoor, and S. Memon.</li>
+      <li><span class="pub-badge">J5</span> <span class="pub-title">A Lightweight Multi‑Scale STFT with SE Attention and BiLSTM for Real‑Time Bearing Fault Diagnosis.</span> <span class="pub-journal">Advances in Mechanical Engineering (2025, accepted).</span> — Muhammad Tahir, Hongfeng Li, Wajid Khan, Qasem Kharma, G. Murtaza, Xizhen Huang, Ievgen Zaitsev.</li>
+      <li><span class="pub-badge">J6</span> <span class="pub-title">HTPNet: A Hybrid Transformer‑Based Dynamic Projection Network with Adversarial for Cross‑Condition Bearing Fault Diagnosis.</span> <span class="pub-journal">Machines (2025, accepted).</span> — Muhammad Tahir, Hongfeng Li, Hafiz Muhammad Bilal, G. Murtaza, Xizhen Huang, Yasir Iqbal.</li>
+      <li><span class="pub-badge">J7</span> <span class="pub-title">KPGNet: Knowledge‑Guided Semantic Projection Network for Cross‑Speed Bearing Fault Diagnosis.</span> <span class="pub-journal">Journal on Advances in Signal Processing.</span> — Muhammad Tahir, Hongfeng Li, Ghulam Murtaza, Wajid Khan, Xizhen Huang, Seif Al Bustanji, and Ievgen Zaitsev.</li>
+
+      <li><span class="pub-badge">C1</span> <span class="pub-title">Organic Molecules for Quantum Communication.</span> <span class="pub-journal">In Signal Processing in Photonic Communications, pp. SpW2J‑1, Optica Publishing Group (2022).</span> — M. Colautti, G. Murtaza, M. Hilke, P. Lombardi, F. S. Cataliotti, A. Zavatta, D. Bacco, and C. Toninelli.</li>
+      <li><span class="pub-badge">C2</span> <span class="pub-title">Hong‑Ou‑Mandel interference from distinct molecules on the same chip.</span> <span class="pub-journal">In Quantum Computing, Communication, and Simulation III, Vol. 12446, p. 1244611, SPIE (2023).</span> — M. Colautti, D. Bacco, Rocco Duquennoy, R. Emadi, P. Majumder, P. Lombardi, G. Murtaza, M. Hilke, F. S. Cataliotti, A. Zavatta, and C. Toninelli.</li>
+      <li><span class="pub-badge">C3</span> <span class="pub-title">Indistinguishable Photons from a Single Molecule under Pulsed Excitation.</span> <span class="pub-journal">In EPJ Web of Conferences, Vol. 255, EDP Sciences (2021).</span> — Lombardi, Pietro, Maja Colautti, Rocco Duquennoy, Ghulam Murtaza, Prosenjit Majumder, and Costanza Toninelli.</li>
+      <li><span class="pub-badge">C4</span> <span class="pub-title">Organic Dye Molecules as Single Photon Sources for Optical Quantum Technologies.</span> <span class="pub-journal">In Quantum Information and Measurement, pp. Tu2B‑3, Optical Society of America (2021).</span> — Lombardi, Pietro, Ramin Emadi, Rocco Duquennoy, Ghulam Murtaza, Maja Colautti, and Costanza Toninelli.</li>
+      <li><span class="pub-badge">C5</span> <span class="pub-title">Study on the Effects of RF Coaxial Connector Degradation on Signal Integrity using S Parameters.</span> <span class="pub-journal">2019 International Conference on Microwave and Millimeter Wave Technology (ICMMT), Guangzhou, China, pp. 1‑3 (2019).</span> — H. M. Bilal, Z. Wang, Y. Zhou, G. Murtaza, J. Gao, and X. Li.</li>
+      <li><span class="pub-badge">C6</span> <span class="pub-title">Investigation on the Effects of Loose Coaxial Connectors on Electromagnetic Radiation.</span> <span class="pub-journal">2024 International Conference on Microwave and Millimeter Wave Technology (ICMMT), Vol. 1, pp. 1‑3, IEEE (2024).</span> — Bilal, Hafiz Muhammad, Jinchun Gao, Tianmeng Zhang, Jiayu Liu, Ziyang Zhang, and Ghulam Murtaza.</li>
+      <li><span class="pub-badge">C7</span> <span class="pub-title">The Art of Perception: Cross‑Modality Learning for Accurate Tumour Segmentation in Breast Imaging.</span> <span class="pub-journal">2025 Eighth International Women in Data Science Conference at Prince Sultan University (WiDS PSU), pp. 181‑185, IEEE (2025).</span> — Ali, Mudassar, Iqra Mariam, Kainat Wajahat, Ghulam Murtaza, Muhammad Awais, and Muhammad Ahsan Qureshi.</li>
     </ul>
     <p style="margin-top:1rem;"><a href="https://scholar.google.com/" target="_blank">→ View full publication list on Google Scholar</a></p>
 
-    <h3 style="margin:2.5rem 0 1rem;">Selected Conference Presentations</h3>
-    <ul class="pub-list">
-      <li>CONNECT Plenary Meeting, Athlone, Ireland — <em>Presentation</em></li>
-      <li>CoQREATE Meeting TCD, Dublin, Ireland — <em>Presentation</em></li>
-      <li>The European Optical Society Annual Meeting (EOSAM), Rome, Italy — <em>Paper Presentation</em></li>
-      <li>Quantum Nanophotonics, Benasque, Spain — <em>Poster Presentation</em></li>
-      <li>INO Annual Symposium, Florence, Italy — <em>Symposium</em></li>
-      <li>Virtual BQIT:20 – 7th Annual Bristol Quantum Information Technologies Workshop, Bristol, UK — <em>Workshop</em></li>
-      <li>Quantum Technologies PhD Summer Schools (Catania, Camerino, Florence) — <em>Oral Contributions</em></li>
+    <h3 style="margin:2.2rem 0 0.75rem;">Conference/Workshops/Meetings</h3>
+    <ul class="events-list">
+      <li><span class="event-year">2023</span> CONNECT Plenary Meeting, Athlone, Ireland — <em>Presentation</em></li>
+      <li><span class="event-year">2023</span> CoQREATE Meeting TCD, Dublin, Ireland — <em>Presentation</em></li>
+      <li><span class="event-year">2021</span> The European Optical Society Annual Meeting (EOSAM), Rome, Italy — <em>Paper Presentation</em></li>
+      <li><span class="event-year">2021</span> Quantum Nanophotonics, Benasque, Spain — <em>Poster Presentation</em></li>
+      <li><span class="event-year">2020</span> INO Annual Symposium, Florence, Italy — <em>Symposium</em></li>
+      <li><span class="event-year">2020</span> Virtual BQIT:20 – 7th Annual Bristol Quantum Information Technologies Workshop, Bristol, UK — <em>Workshop</em></li>
+      <li><span class="event-year">2022</span> Quantum Technologies PhD Summer School, Scuola Superiore di Catania, Italy — <em>Oral Contribution</em></li>
+      <li><span class="event-year">2021</span> Quantum Technologies PhD Summer School, Università di Camerino, Italy — <em>Oral Contribution</em></li>
+      <li><span class="event-year">2020</span> Quantum Technologies PhD Summer School, National Institute of Optics, Florence, Italy — <em>Oral Contribution</em></li>
     </ul>
   </div>
 </section>
@@ -306,6 +340,12 @@
       <div class="meta">Walton Institute, SETU & CONNECT Center · May 2023 – May 2025</div>
       <div class="location">Waterford, Ireland</div>
       <p>Developed Quantum Optics Lab under the IrelandQCI initiative, procuring cutting‑edge equipment and implementing new QKD protocols. Conducted research on quantum communication via satellites. Mentored students and managed Health & Safety and Lab Procurement responsibilities.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>Global Manager</h3>
+      <div class="meta">World Student Services · Jan 2020 – Present</div>
+      <div class="location">Pakistan</div>
+      <p>Responsibilities: Global Admissions Analysis and Pathways Consultancy, Admission Consultancy and Advisory, Application, International Partnerships, Coordination and Documentation Process Management.</p>
     </div>
     <div class="timeline-item">
       <h3>RF Drive Test Engineer (Telecom)</h3>
