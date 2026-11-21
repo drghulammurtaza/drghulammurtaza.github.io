@@ -1,61 +1,102 @@
 
-/* =========================================
-   PROFESSIONAL ACADEMIC PORTFOLIO REDESIGN
-   ========================================= */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#142b45">
+<title>Dr. Ghulam Murtaza | Quantum Technologies Researcher</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
 :root {
   --navy: #142b45;
+  --navy-light: #1d405e;
   --teal: #197c83;
   --gold: #bd9856;
   --light: #f5f7fa;
   --gray: #344255;
   --muted: #718096;
   --border: #e3e8ef;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #ffffff;
-  color: #344255;
+  background: var(--white);
+  color: var(--gray);
   line-height: 1.8;
   font-size: 15px;
 }
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
-  letter-spacing: -0.3px;
   color: var(--navy);
+  line-height: 1.4;
 }
 
 a {
   color: var(--teal);
+  text-decoration: none;
   transition: color .2s ease;
+}
+
+a:hover {
+  color: var(--gold);
+}
+
+button, input, textarea {
+  font-family: inherit;
 }
 
 /* NAVIGATION */
 
 nav {
-  padding: 1rem 6%;
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: rgba(255,255,255,.97);
-  border-bottom: 1px solid #e8edf2;
-  box-shadow: 0 3px 18px rgba(20,43,69,.045);
   backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 3px 18px rgba(20,43,69,.045);
+  z-index: 100;
+  padding: 1rem 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 nav .logo {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
   font-size: 1.25rem;
-  letter-spacing: -.4px;
   color: var(--navy);
+  white-space: nowrap;
 }
 
 nav ul {
+  list-style: none;
+  display: flex;
   gap: 1.7rem;
 }
 
 nav ul a {
+  color: #425168;
   font-size: .84rem;
   font-weight: 600;
-  color: #425168;
   position: relative;
 }
 
@@ -70,149 +111,181 @@ nav ul a::after {
   transition: width .25s ease;
 }
 
+nav ul a:hover {
+  color: var(--teal);
+  text-decoration: none;
+}
+
 nav ul a:hover::after {
   width: 100%;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero {
   min-height: 680px;
   height: 88vh;
-  padding: 110px 8% 70px;
-  justify-content: flex-start;
-  text-align: left;
   background:
     radial-gradient(circle at 85% 25%, rgba(25,124,131,.22), transparent 30%),
     linear-gradient(115deg, #10243b 0%, #183b5b 65%, #214c68 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  color: white;
+  padding: 110px 8% 70px;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero::before {
+  content: '';
+  position: absolute;
   width: 500px;
   height: 500px;
+  background: radial-gradient(circle, rgba(189,152,86,.15), transparent 70%);
   top: -170px;
   right: -100px;
-  background: radial-gradient(circle, rgba(189,152,86,.15), transparent 70%);
+  border-radius: 50%;
 }
 
 .hero::after {
+  content: '';
+  position: absolute;
   width: 450px;
   height: 450px;
+  background: radial-gradient(circle, rgba(25,124,131,.16), transparent 70%);
   bottom: -230px;
   left: 40%;
-  background: radial-gradient(circle, rgba(25,124,131,.16), transparent 70%);
+  border-radius: 50%;
 }
 
 .hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 850px;
 }
 
 .hero h1 {
   font-size: clamp(2.8rem, 5vw, 4.5rem);
-  line-height: 1.15;
-  letter-spacing: -1.8px;
+  color: white;
   margin-bottom: 1.1rem;
+  letter-spacing: -1.8px;
+  line-height: 1.15;
 }
 
 .hero .subtitle {
-  color: #c5d8e7;
   font-size: 1.12rem;
-  font-weight: 400;
-  line-height: 1.8;
+  color: #c5d8e7;
   margin-bottom: 1.5rem;
+  font-weight: 400;
 }
 
 .hero-socials {
+  display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: .85rem;
   margin-bottom: 1.8rem;
 }
 
 .social-btn {
-  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
   padding: .55rem 1rem;
+  border-radius: 5px;
   background: rgba(255,255,255,.07);
   border: 1px solid rgba(255,255,255,.22);
+  color: white;
+  font-size: .85rem;
+  font-weight: 500;
+  transition: all .22s ease;
+}
+
+.social-btn:hover {
+  background: rgba(255,255,255,.2);
+  border-color: white;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+.social-btn svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+  flex-shrink: 0;
 }
 
 .hero .tagline {
+  font-size: 1.05rem;
+  color: #d5e0e9;
   max-width: 700px;
   margin: 0 0 2rem;
-  color: #d5e0e9;
-  font-size: 1.05rem;
   line-height: 1.9;
 }
 
 .hero-actions {
+  display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .btn {
-  border-radius: 5px;
+  display: inline-block;
   padding: .9rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 600;
   font-size: .88rem;
-  letter-spacing: .2px;
+  transition: all .25s ease;
 }
 
 .btn-primary {
   background: var(--gold);
+  color: white;
   box-shadow: 0 5px 18px rgba(189,152,86,.2);
 }
 
 .btn-primary:hover {
   background: #a98445;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
 .btn-outline {
   border: 1px solid rgba(255,255,255,.55);
+  color: white;
 }
 
-/* HIGHLIGHT CARDS */
-
-.highlights {
-  max-width: 900px;
-  gap: 1.5rem;
-  margin: -3.5rem auto 0;
+.btn-outline:hover {
+  background: rgba(255,255,255,.12);
+  border-color: white;
+  color: white;
+  text-decoration: none;
+  transform: translateY(-2px);
 }
 
-.highlight-card {
-  border: 1px solid #e8edf2;
-  border-top: 3px solid var(--gold);
-  border-radius: 8px;
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba(20,43,69,.065);
-}
-
-.highlight-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 14px 35px rgba(20,43,69,.1);
-}
-
-.highlight-card .icon-wrap {
-  border-radius: 12px;
-  background: #edf4f5;
-  color: var(--teal);
-}
-
-.highlight-card h3 {
-  font-size: 1.2rem;
-}
-
-/* GENERAL SECTIONS */
+/* SECTIONS */
 
 section {
   padding: 5.5rem 7%;
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .section-band {
+  background: var(--light);
   max-width: 100%;
-  background: #f5f7fa;
   border-top: 1px solid #edf0f4;
   border-bottom: 1px solid #edf0f4;
 }
 
 .section-inner {
   max-width: 1050px;
+  margin: 0 auto;
 }
 
 .section-title {
@@ -234,36 +307,197 @@ section {
 
 .section-subtitle {
   color: #8190a0;
-  font-size: .94rem;
   margin-bottom: 2.5rem;
+  font-size: .94rem;
 }
 
-section > p:not(.section-subtitle) {
-  line-height: 1.95;
+/* HIGHLIGHTS */
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: -3.5rem auto 0;
+  position: relative;
+  z-index: 10;
 }
 
-/* EXPERIENCE AND EDUCATION TIMELINE */
+.highlight-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(20,43,69,.065);
+  border: 1px solid #e8edf2;
+  border-top: 3px solid var(--gold);
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(20,43,69,.1);
+}
+
+.highlight-card .icon-wrap {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.1rem;
+  border-radius: 12px;
+  background: #edf4f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.85rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: .65rem;
+}
+
+.highlight-card p {
+  color: var(--muted);
+  font-size: .92rem;
+  line-height: 1.8;
+}
+
+/* PROJECTS */
+
+.project-card {
+  background: white;
+  border-radius: 7px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 1.3rem;
+  border: 1px solid #e6ebf0;
+  border-left: 3px solid var(--gold);
+  box-shadow: 0 4px 16px rgba(20,43,69,.035);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(20,43,69,.08);
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: .4rem;
+}
+
+.project-card .meta {
+  color: var(--teal);
+  font-size: .83rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  color: #526174;
+  font-size: .92rem;
+  line-height: 1.85;
+}
+
+/* PUBLICATIONS */
+
+.pub-list {
+  list-style: none;
+}
+
+.pub-list li {
+  padding: 1.1rem 1rem;
+  border-bottom: 1px solid #e7ebf0;
+  font-size: .91rem;
+  line-height: 1.85;
+  transition: background .2s ease;
+}
+
+.pub-list li:hover {
+  background: rgba(25,124,131,.035);
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-badge {
+  display: inline-block;
+  background: #eaf2f3;
+  color: #176d75;
+  border: none;
+  font-size: .73rem;
+  font-weight: 700;
+  padding: .2rem .55rem;
+  border-radius: 4px;
+  margin-right: .45rem;
+}
+
+.pub-list .pub-title {
+  font-weight: 600;
+  color: #253d57;
+}
+
+.pub-list .pub-journal {
+  color: #788698;
+  font-style: italic;
+}
+
+/* EVENTS */
+
+.events-list {
+  list-style: none;
+}
+
+.events-list li {
+  padding: .75rem 0;
+  border-bottom: 1px solid #e5eaf0;
+  font-size: .9rem;
+  line-height: 1.7;
+}
+
+.events-list li:last-child {
+  border-bottom: none;
+}
+
+.event-year {
+  font-weight: 700;
+  color: var(--teal);
+  margin-right: .4rem;
+}
+
+/* TIMELINE */
 
 .timeline {
+  position: relative;
   padding-left: 2.2rem;
 }
 
 .timeline::before {
-  background: #dce4eb;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
   width: 2px;
+  background: #dce4eb;
 }
 
 .timeline-item {
+  position: relative;
   margin-bottom: 2.8rem;
 }
 
 .timeline-item::before {
-  background: var(--gold);
-  box-shadow: 0 0 0 4px #f5f7fa;
-  border: 2px solid #fff;
+  content: '';
+  position: absolute;
+  left: -2.48rem;
+  top: .3rem;
   width: 11px;
   height: 11px;
-  left: -2.48rem;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid white;
+  box-shadow: 0 0 0 4px var(--light);
 }
 
 .timeline-item h3 {
@@ -289,85 +523,10 @@ section > p:not(.section-subtitle) {
   line-height: 1.85;
 }
 
-/* PROJECT CARDS */
-
-.project-card {
-  border: 1px solid #e6ebf0;
-  border-left: 3px solid var(--gold);
-  border-radius: 7px;
-  padding: 1.8rem 2rem;
-  margin-bottom: 1.3rem;
-  box-shadow: 0 4px 16px rgba(20,43,69,.035);
-  transition: all .25s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 28px rgba(20,43,69,.08);
-}
-
-.project-card h3 {
-  font-size: 1.2rem;
-  line-height: 1.5;
-}
-
-.project-card .meta {
-  color: var(--teal);
-  font-size: .83rem;
-}
-
-.project-card p {
-  font-size: .92rem;
-  line-height: 1.85;
-  color: #526174;
-}
-
-/* PUBLICATIONS */
-
-.pub-list li {
-  padding: 1.1rem 1rem;
-  border-bottom: 1px solid #e7ebf0;
-  line-height: 1.85;
-  font-size: .91rem;
-  transition: background .2s ease;
-}
-
-.pub-list li:hover {
-  background: rgba(25,124,131,.035);
-}
-
-.pub-badge {
-  background: #eaf2f3;
-  color: #176d75;
-  border: none;
-  border-radius: 4px;
-  font-size: .73rem;
-  padding: .2rem .55rem;
-  vertical-align: middle;
-}
-
-.pub-list .pub-title {
-  color: #253d57;
-}
-
-.pub-list .pub-journal {
-  color: #788698;
-}
-
-.events-list li {
-  padding: .75rem 0;
-  border-bottom: 1px solid #e5eaf0;
-  font-size: .9rem;
-}
-
-.event-year {
-  color: var(--teal);
-  font-weight: 700;
-}
-
 /* SKILLS */
 
 .skills-grid {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   gap: 1.4rem;
 }
@@ -376,29 +535,32 @@ section > p:not(.section-subtitle) {
   padding: 1.7rem;
   border: 1px solid #e7ebf0;
   border-radius: 7px;
-  background: #fff;
+  background: white;
   box-shadow: 0 4px 18px rgba(20,43,69,.035);
 }
 
 .skill-group h3 {
   font-size: 1.15rem;
-  padding-bottom: .8rem;
   margin-bottom: 1rem;
+  padding-bottom: .8rem;
   border-bottom: 1px solid #edf0f3;
 }
 
 .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
   gap: .55rem;
 }
 
 .skill-tag {
   background: #f1f5f7;
   border: 1px solid #e5ebef;
-  border-radius: 4px;
   padding: .42rem .7rem;
+  border-radius: 4px;
   font-size: .79rem;
   line-height: 1.5;
   color: #46576b;
+  transition: all .2s ease;
 }
 
 .skill-tag:hover {
@@ -410,18 +572,24 @@ section > p:not(.section-subtitle) {
 /* CONTACT */
 
 .contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 3.5rem;
   align-items: start;
 }
 
 .contact-info {
   padding: 1.8rem;
-  background: #fff;
+  background: white;
   border: 1px solid #e6ebf0;
   border-radius: 7px;
 }
 
 .contact-info p {
+  margin-bottom: .9rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   font-size: .9rem;
   padding-bottom: .55rem;
   border-bottom: 1px solid #f0f2f5;
@@ -430,23 +598,26 @@ section > p:not(.section-subtitle) {
 }
 
 .contact-info .label {
+  font-weight: 600;
   color: var(--navy);
   min-width: 105px;
 }
 
 .contact-form {
   padding: 1.8rem;
-  background: #fff;
+  background: white;
   border: 1px solid #e6ebf0;
   border-radius: 7px;
 }
 
 .contact-form input,
 .contact-form textarea {
+  width: 100%;
+  padding: .9rem 1rem;
   border: 1px solid #dfe6ec;
   border-radius: 5px;
-  padding: .9rem 1rem;
   font-size: .88rem;
+  margin-bottom: 1rem;
   transition: border .2s ease;
 }
 
@@ -457,10 +628,19 @@ section > p:not(.section-subtitle) {
   box-shadow: 0 0 0 3px rgba(25,124,131,.08);
 }
 
+.contact-form textarea {
+  min-height: 130px;
+  resize: vertical;
+}
+
 .contact-form button {
   background: var(--navy);
-  border-radius: 5px;
+  color: white;
+  border: none;
   padding: .9rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
   transition: all .2s ease;
 }
 
@@ -473,6 +653,7 @@ section > p:not(.section-subtitle) {
 footer {
   background: #10243b;
   color: #c4d0dc;
+  text-align: center;
   padding: 2.5rem 1.5rem;
   font-size: .85rem;
 }
@@ -481,7 +662,7 @@ footer a {
   color: #d8b878;
 }
 
-/* ACCESSIBILITY AND RESPONSIVENESS */
+/* ACCESSIBILITY */
 
 a:focus-visible,
 button:focus-visible {
@@ -489,10 +670,11 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+/* TABLET */
+
 @media (max-width: 768px) {
   nav {
     padding: .85rem 5%;
-    gap: 1rem;
   }
 
   nav ul {
@@ -514,7 +696,6 @@ button:focus-visible {
 
   nav .logo {
     font-size: 1rem;
-    white-space: nowrap;
   }
 
   .hero {
@@ -533,10 +714,6 @@ button:focus-visible {
 
   .hero .tagline {
     font-size: .95rem;
-  }
-
-  .hero-socials {
-    flex-wrap: wrap;
   }
 
   .hero-actions {
@@ -571,6 +748,8 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 430px) {
   nav {
@@ -616,6 +795,8 @@ button:focus-visible {
   }
 }
 
+/* REDUCED MOTION */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     scroll-behavior: auto !important;
@@ -623,3 +804,550 @@ button:focus-visible {
     animation-duration: .01ms !important;
   }
 }
+</style>
+</head>
+
+<body id="top">
+
+<!-- NAVIGATION -->
+
+<nav>
+  <div class="logo">Dr. G. Murtaza</div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-content">
+
+    <h1>Dr. Ghulam Murtaza</h1>
+
+    <div class="subtitle">
+      Quantum Technologies Researcher | Licensed Electrical Engineer
+    </div>
+
+    <div class="hero-socials">
+
+      <a href="https://x.com/GMurtaZaPak"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-btn"
+         aria-label="X (Twitter)">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+
+        <span>X / Twitter</span>
+      </a>
+
+      <a href="https://www.linkedin.com/in/gmurtazapak"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="social-btn"
+         aria-label="LinkedIn">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+        </svg>
+
+        <span>LinkedIn</span>
+      </a>
+
+    </div>
+
+    <p class="tagline">
+      Advancing secure quantum communication through experimental quantum optics, quantum photonics, and single‑photon source technologies.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#research" class="btn btn-primary">View My Research</a>
+      <a href="Ghulam_Murtaza_CV.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+    </div>
+
+  </div>
+</div>
+
+<!-- HIGHLIGHTS -->
+
+<section style="padding-top:0; padding-bottom:2rem;">
+  <div class="highlights">
+
+    <div class="highlight-card">
+      <div class="icon-wrap">🔬</div>
+      <h3>Research Focus</h3>
+      <p>
+        Experimental quantum optics, QKD, single‑photon sources, quantum communication, and optical systems.
+      </p>
+    </div>
+
+    <div class="highlight-card">
+      <div class="icon-wrap">🌍</div>
+      <h3>International Experience</h3>
+      <p>
+        Research and professional experience across Pakistan, China, Italy, and Ireland.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <h2 class="section-title">About Me</h2>
+  <p class="section-subtitle">Quantum researcher, engineer, and educator.</p>
+
+  <p>
+    I am a quantum technologies researcher and licensed Electrical Engineer with a PhD from the University of Naples, Federico II, and the National Institute of Optics (CNR‑INO) in Florence, Italy. My work focuses on experimental quantum optics, quantum communication, and quantum photonics.
+  </p>
+
+  <br>
+
+  <p>
+    Currently, I am a Government of Ireland Postdoctoral Researcher at Tyndall National Institute, University College Cork, where I work on cavity‑integrated molecular photon interfaces for scalable photonic graph state generation.
+  </p>
+
+  <br>
+
+  <p>
+    My research journey has taken me across four countries—Pakistan, China, Italy, and Ireland—where I have developed expertise in experimental quantum optics, quantum key distribution (QKD), single‑photon sources, quantum satellite communications, and optical communication systems. I am passionate about advancing secure quantum technologies and contributing to teaching, research supervision, and curriculum development.
+  </p>
+
+</section>
+
+<!-- EXPERIENCE -->
+
+<section id="experience" class="section-band">
+
+  <div class="section-inner">
+
+    <h2 class="section-title">Experience</h2>
+    <p class="section-subtitle">Academic and professional appointments.</p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <h3>Government of Ireland Postdoctoral Researcher</h3>
+        <div class="meta">Tyndall National Institute, University College Cork · Sep 2026 – Present</div>
+        <div class="location">Cork, Ireland</div>
+        <p>
+          Working on the project “Cavity‑Integrated Molecular Photon Interface for Scalable Photonic Graph State Generation” under the Government of Ireland Postdoctoral Fellowships (Research Ireland Funding).
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Postdoctoral Researcher</h3>
+        <div class="meta">Walton Institute, SETU & CONNECT Center · May 2023 – May 2025</div>
+        <div class="location">Waterford, Ireland</div>
+        <p>
+          Developed Quantum Optics Lab under the IrelandQCI initiative, procuring cutting‑edge equipment and implementing new QKD protocols. Conducted research on quantum communication via satellites. Mentored students and managed Health & Safety and Lab Procurement responsibilities.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Global Manager</h3>
+        <div class="meta">World Student Services · Jan 2020 – Present</div>
+        <div class="location">Pakistan</div>
+        <p>
+          Responsibilities: Global Admissions Analysis and Pathways Consultancy, Admission Consultancy and Advisory, Application, International Partnerships, Coordination and Documentation Process Management.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>RF Drive Test Engineer (Telecom)</h3>
+        <div class="meta">Turnotech · Jan 2017 – Aug 2017</div>
+        <div class="location">Pakistan</div>
+        <p>
+          Complete expertise in 2G, 3G, and 4G Drive Testing, Post Processing, fault identification, sector swaps, and identifying missing neighbors. Documented reports and resolved customer complaints.
+        </p>
+      </div>
+
+      <div class="timeline-item">
+        <h3>Internee DT Engineer (Telecom)</h3>
+        <div class="meta">Jinsung International · Feb 2016 – Sep 2016</div>
+        <div class="location">Pakistan</div>
+        <p>
+          Performed 2G, 3G, and 4G Drive Testing and SSV Drive Testing. Conducted Post Processing, fault identification, sector swaps, and customer complaint resolution.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+  <h2 class="section-title">Education</h2>
+  <p class="section-subtitle">Degrees, scholarships, and certifications.</p>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <h3>PhD in Quantum Technologies</h3>
+      <div class="meta">University of Naples, Federico II & National Institute of Optics (CNR‑INO) · Feb 2020 – Apr 2023</div>
+      <div class="location">Florence, Italy</div>
+      <p>
+        Supervisor: Dr. Costanza Toninelli · Research Group: Quantum Nanophotonics, LENS · Thesis: <em>Molecular Quantum Emitter for Quantum Communication</em> · Full PhD scholarship.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>Master of Engineering in Electronics and Communications Engineering</h3>
+      <div class="meta">Beijing University of Posts and Telecommunications · Sep 2017 – 2019</div>
+      <div class="location">Beijing, China</div>
+      <p>
+        Supervisor: Prof. Xin Xiangjun · Research Lab: State Key Laboratory of Information Photonics and Optical Communications · Thesis: <em>Spectral Efficient Optical Communication Using Higher Order QAM</em> · Chinese Government Scholarship.
+      </p>
+    </div>
+
+    <div class="timeline-item">
+      <h3>B.Sc. Electrical Engineering (Telecommunications)</h3>
+      <div class="meta">Government College University · Sep 2011 – 2015</div>
+      <div class="location">Faisalabad, Pakistan</div>
+      <p>
+        Thesis/FYP: <em>Intelligent Monitoring and Controlling of Home and Industrial Appliances Through Web</em> · Merit Scholarship.
+      </p>
+    </div>
+
+  </div>
+
+  <h3 style="margin-top:2.5rem;">Honors & Awards</h3>
+
+  <ul class="pub-list">
+    <li>Research Ireland Postdoctoral Fellowship — Tyndall National Institute, University College Cork</li>
+    <li>Full PhD Scholarship — University of Naples, Federico II, Italy</li>
+    <li>PhD Scholarship — Shanghai Jiao Tong University, China</li>
+    <li>Chinese Government Scholarship for Master’s — Beijing University of Posts and Telecommunications</li>
+    <li>Merit Scholarship for College Studies — Punjab College of Science, Lahore, Pakistan</li>
+  </ul>
+
+</section>
+
+<!-- RESEARCH AND PUBLICATIONS -->
+
+<section id="research" class="section-band">
+
+  <div class="section-inner">
+
+    <h2 class="section-title">Research & Publications</h2>
+    <p class="section-subtitle">Selected projects, publications, and presentations.</p>
+
+    <h3 style="margin-bottom:1rem;">Current & Recent Projects</h3>
+
+    <div class="project-card">
+      <h3>Cavity‑Integrated Molecular Photon Interface for Scalable Photonic Graph State Generation</h3>
+      <div class="meta">Tyndall National Institute, University College Cork · Sep 2026 – Present</div>
+      <p>
+        Developing cavity‑integrated molecular photon interfaces for scalable photonic graph state generation. Funded by the Government of Ireland Postdoctoral Fellowship (Research Ireland).
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Development of Quantum Optics Lab for Quantum Communication</h3>
+      <div class="meta">Walton Institute, SETU, Ireland · May 2023 – May 2025</div>
+      <p>
+        Established a quantum optics lab under the IrelandQCI initiative, procured cutting‑edge equipment, and implemented new QKD protocols. Conducted research on quantum communication via satellites.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Molecular Quantum Emitter for Quantum Communication</h3>
+      <div class="meta">LENS, Florence, Italy · Feb 2020 – Apr 2023</div>
+      <p>
+        Demonstrated a proof‑of‑concept QKD system using a molecule‑based single‑photon source operating at room temperature (785 nm). Achieved concrete advantages in secret key rate (SKR) and security due to negligible multi‑photon events.
+      </p>
+    </div>
+
+    <h3 style="margin:2.5rem 0 1rem;">Selected Journal & Conference Publications</h3>
+
+    <ul class="pub-list">
+
+      <li>
+        <span class="pub-badge">J1</span>
+        <span class="pub-title">Efficient room‑temperature molecular single‑photon sources for quantum key distribution.</span>
+        <span class="pub-journal">Optics Express, 31(6), 9437‑9447 (2023).</span>
+        — G. Murtaza, M. Colautti, M. Hilke, P. Lombardi, F. Cataliotti, A. Zavatta, D. Bacco, and C. Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">J2</span>
+        <span class="pub-title">Triggered emission of indistinguishable photons from an organic dye molecule.</span>
+        <span class="pub-journal">Applied Physics Letters, 118, 204002 (2021).</span>
+        — P. Lombardi, M. Colautti, R. Duquennoy, G. Murtaza, P. Majumder, and C. Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">J3</span>
+        <span class="pub-title">Optical Frequency Comb‑Based 256‑QAM WDM Coherent System with Digital Signal Processing Algorithm.</span>
+        <span class="pub-journal">Chips, 4(2), 16 (2025).</span>
+        — A. Babar, G. Murtaza, H. M. Bilal, T. Mahmood, M. Rashid, and Z. Ullah.
+      </li>
+
+      <li>
+        <span class="pub-badge">J4</span>
+        <span class="pub-title">Energy routing algorithm based on OSPF protocol and virtual circuit switching mode in energy local area network.</span>
+        <span class="pub-journal">International Journal of Computational Complexity and Intelligent Algorithms, pp. 292‑310 (2020).</span>
+        — B. Ali, G. Murtaza, T. Mahmood, H. M. Bilal, R. Zahoor, and S. Memon.
+      </li>
+
+      <li>
+        <span class="pub-badge">J5</span>
+        <span class="pub-title">A Lightweight Multi‑Scale STFT with SE Attention and BiLSTM for Real‑Time Bearing Fault Diagnosis.</span>
+        <span class="pub-journal">Advances in Mechanical Engineering (2025, accepted).</span>
+        — Muhammad Tahir, Hongfeng Li, Wajid Khan, Qasem Kharma, G. Murtaza, Xizhen Huang, Ievgen Zaitsev.
+      </li>
+
+      <li>
+        <span class="pub-badge">J6</span>
+        <span class="pub-title">HTPNet: A Hybrid Transformer‑Based Dynamic Projection Network with Adversarial for Cross‑Condition Bearing Fault Diagnosis.</span>
+        <span class="pub-journal">Machines (2025, accepted).</span>
+        — Muhammad Tahir, Hongfeng Li, Hafiz Muhammad Bilal, G. Murtaza, Xizhen Huang, Yasir Iqbal.
+      </li>
+
+      <li>
+        <span class="pub-badge">J7</span>
+        <span class="pub-title">KPGNet: Knowledge‑Guided Semantic Projection Network for Cross‑Speed Bearing Fault Diagnosis.</span>
+        <span class="pub-journal">Journal on Advances in Signal Processing.</span>
+        — Muhammad Tahir, Hongfeng Li, Ghulam Murtaza, Wajid Khan, Xizhen Huang, Seif Al Bustanji, and Ievgen Zaitsev.
+      </li>
+
+      <li>
+        <span class="pub-badge">C1</span>
+        <span class="pub-title">Organic Molecules for Quantum Communication.</span>
+        <span class="pub-journal">In Signal Processing in Photonic Communications, pp. SpW2J‑1, Optica Publishing Group (2022).</span>
+        — M. Colautti, G. Murtaza, M. Hilke, P. Lombardi, F. S. Cataliotti, A. Zavatta, D. Bacco, and C. Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">C2</span>
+        <span class="pub-title">Hong‑Ou‑Mandel interference from distinct molecules on the same chip.</span>
+        <span class="pub-journal">In Quantum Computing, Communication, and Simulation III, Vol. 12446, p. 1244611, SPIE (2023).</span>
+        — M. Colautti, D. Bacco, Rocco Duquennoy, R. Emadi, P. Majumder, P. Lombardi, G. Murtaza, M. Hilke, F. S. Cataliotti, A. Zavatta, and C. Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">C3</span>
+        <span class="pub-title">Indistinguishable Photons from a Single Molecule under Pulsed Excitation.</span>
+        <span class="pub-journal">In EPJ Web of Conferences, Vol. 255, EDP Sciences (2021).</span>
+        — Lombardi, Pietro, Maja Colautti, Rocco Duquennoy, Ghulam Murtaza, Prosenjit Majumder, and Costanza Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">C4</span>
+        <span class="pub-title">Organic Dye Molecules as Single Photon Sources for Optical Quantum Technologies.</span>
+        <span class="pub-journal">In Quantum Information and Measurement, pp. Tu2B‑3, Optical Society of America (2021).</span>
+        — Lombardi, Pietro, Ramin Emadi, Rocco Duquennoy, Ghulam Murtaza, Maja Colautti, and Costanza Toninelli.
+      </li>
+
+      <li>
+        <span class="pub-badge">C5</span>
+        <span class="pub-title">Study on the Effects of RF Coaxial Connector Degradation on Signal Integrity using S Parameters.</span>
+        <span class="pub-journal">2019 International Conference on Microwave and Millimeter Wave Technology (ICMMT), Guangzhou, China, pp. 1‑3 (2019).</span>
+        — H. M. Bilal, Z. Wang, Y. Zhou, G. Murtaza, J. Gao, and X. Li.
+      </li>
+
+      <li>
+        <span class="pub-badge">C6</span>
+        <span class="pub-title">Investigation on the Effects of Loose Coaxial Connectors on Electromagnetic Radiation.</span>
+        <span class="pub-journal">2024 International Conference on Microwave and Millimeter Wave Technology (ICMMT), Vol. 1, pp. 1‑3, IEEE (2024).</span>
+        — Bilal, Hafiz Muhammad, Jinchun Gao, Tianmeng Zhang, Jiayu Liu, Ziyang Zhang, and Ghulam Murtaza.
+      </li>
+
+      <li>
+        <span class="pub-badge">C7</span>
+        <span class="pub-title">The Art of Perception: Cross‑Modality Learning for Accurate Tumour Segmentation in Breast Imaging.</span>
+        <span class="pub-journal">2025 Eighth International Women in Data Science Conference at Prince Sultan University (WiDS PSU), pp. 181‑185, IEEE (2025).</span>
+        — Ali, Mudassar, Iqra Mariam, Kainat Wajahat, Ghulam Murtaza, Muhammad Awais, and Muhammad Ahsan Qureshi.
+      </li>
+
+    </ul>
+
+    <p style="margin-top:1rem;">
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">
+        → View full publication list on Google Scholar
+      </a>
+    </p>
+
+    <h3 style="margin:2.2rem 0 .75rem;">Conference/Workshops/Meetings</h3>
+
+    <ul class="events-list">
+      <li><span class="event-year">2023</span> CONNECT Plenary Meeting, Athlone, Ireland — <em>Presentation</em></li>
+      <li><span class="event-year">2023</span> CoQREATE Meeting TCD, Dublin, Ireland — <em>Presentation</em></li>
+      <li><span class="event-year">2021</span> The European Optical Society Annual Meeting (EOSAM), Rome, Italy — <em>Paper Presentation</em></li>
+      <li><span class="event-year">2021</span> Quantum Nanophotonics, Benasque, Spain — <em>Poster Presentation</em></li>
+      <li><span class="event-year">2020</span> INO Annual Symposium, Florence, Italy — <em>Symposium</em></li>
+      <li><span class="event-year">2020</span> Virtual BQIT:20 – 7th Annual Bristol Quantum Information Technologies Workshop, Bristol, UK — <em>Workshop</em></li>
+      <li><span class="event-year">2022</span> Quantum Technologies PhD Summer School, Scuola Superiore di Catania, Italy — <em>Oral Contribution</em></li>
+      <li><span class="event-year">2021</span> Quantum Technologies PhD Summer School, Università di Camerino, Italy — <em>Oral Contribution</em></li>
+      <li><span class="event-year">2020</span> Quantum Technologies PhD Summer School, National Institute of Optics, Florence, Italy — <em>Oral Contribution</em></li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <h2 class="section-title">Skills</h2>
+  <p class="section-subtitle">Technical and professional competencies.</p>
+
+  <div class="skills-grid">
+
+    <div class="skill-group">
+      <h3>Scientific Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Experimental Quantum Optics</span>
+        <span class="skill-tag">Quantum Communication (QKD)</span>
+        <span class="skill-tag">Single‑Photon Sources</span>
+        <span class="skill-tag">Coincidence Measurements</span>
+        <span class="skill-tag">Single‑Photon Spectroscopy</span>
+        <span class="skill-tag">Linear Optics</span>
+        <span class="skill-tag">Imaging & Microscopy</span>
+        <span class="skill-tag">Fiber Optics</span>
+        <span class="skill-tag">Organic Molecules</span>
+        <span class="skill-tag">Fluorescence Imaging</span>
+        <span class="skill-tag">Optical Alignment</span>
+        <span class="skill-tag">Optical Detectors (SPAD, APD)</span>
+        <span class="skill-tag">EOMs & Polarization Optics</span>
+        <span class="skill-tag">Chemical Protocols & Fabrication</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Programming & Simulation</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">MATLAB</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">OptiSystem</span>
+        <span class="skill-tag">Huawei LMT</span>
+        <span class="skill-tag">TEMS</span>
+        <span class="skill-tag">Nemo</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Graphics</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">PovRay</span>
+        <span class="skill-tag">Inkscape</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Professional Registration</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Registered Engineer, Pakistan Engineering Council (PEC No.: Elect/52300)</span>
+      </div>
+    </div>
+
+    <div class="skill-group">
+      <h3>Languages</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">English (Fluent)</span>
+        <span class="skill-tag">Urdu (Native)</span>
+        <span class="skill-tag">Chinese (Basic)</span>
+        <span class="skill-tag">Italian (Basic)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="section-band">
+
+  <div class="section-inner">
+
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Get in touch for collaborations, talks, or opportunities.</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-info">
+
+        <p>
+          <span class="label">Email:</span>
+          <a href="mailto:ghulam.murtaza@tyndall.ie">ghulam.murtaza@tyndall.ie</a>
+        </p>
+
+        <p>
+          <span class="label">Alt Email:</span>
+          <a href="mailto:engrgm96@gmail.com">engrgm96@gmail.com</a>
+        </p>
+
+        <p><span class="label">Phone:</span> +353 899559000</p>
+
+        <p><span class="label">Location:</span> Ireland</p>
+
+        <p>
+          <span class="label">LinkedIn:</span>
+          <a href="https://www.linkedin.com/in/gmurtazapak" target="_blank" rel="noopener noreferrer">gmurtazapak</a>
+        </p>
+
+        <p>
+          <span class="label">X / Twitter:</span>
+          <a href="https://x.com/GMurtaZaPak" target="_blank" rel="noopener noreferrer">@GMurtaZaPak</a>
+        </p>
+
+        <p>
+          <span class="label">ResearchGate:</span>
+          <a href="https://www.researchgate.net/profile/Ghulam-Murtaza-65" target="_blank" rel="noopener noreferrer">Ghulam-Murtaza-65</a>
+        </p>
+
+        <p>
+          <span class="label">Scholar:</span>
+          <a href="https://scholar.google.com/" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+        </p>
+
+        <p>
+          <span class="label">Website:</span>
+          <a href="https://drghulammurtaza.github.io/" target="_blank" rel="noopener noreferrer">drghulammurtaza.github.io</a>
+        </p>
+
+      </div>
+
+      <div class="contact-form">
+
+        <input type="text" placeholder="Your Name" aria-label="Your Name">
+
+        <input type="email" placeholder="Your Email" aria-label="Your Email">
+
+        <textarea placeholder="Your Message" aria-label="Your Message"></textarea>
+
+        <button type="button">Send Message</button>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <p>© 2026 Dr. Ghulam Murtaza · Quantum Technologies Researcher</p>
+
+  <p style="margin-top:.5rem; font-size:.8rem;">
+    Built with a clean, academic design.
+    <a href="#top">Back to top ↑</a>
+  </p>
+
+</footer>
+
+</body>
+</html>
